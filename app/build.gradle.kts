@@ -108,4 +108,7 @@ dependencies {
     ksp(libs.room.compiler)
     annotationProcessor(libs.room.compiler)
 
+    /// Coil
+    implementation("io.coil-kt:coil-compose:2.7.0")
+
 }
