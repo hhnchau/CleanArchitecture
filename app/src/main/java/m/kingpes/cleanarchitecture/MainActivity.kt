@@ -5,8 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import m.kingpes.cleanarchitecture.ui.MainScreen
-import m.kingpes.cleanarchitecture.ui.MainViewModel
+import m.kingpes.cleanarchitecture.presentation.navigation.MainScaffold
+import m.kingpes.cleanarchitecture.presentation.screen.MainScreen
+import m.kingpes.cleanarchitecture.presentation.viewmodel.MainViewModel
 
 @AndroidEntryPoint
 class MainActivity: ComponentActivity() {
@@ -16,6 +17,8 @@ class MainActivity: ComponentActivity() {
         setContent{
             val viewModel: MainViewModel = hiltViewModel()
             MainScreen(viewModel)
+
+            //MainScaffold()
         }
     }
 }

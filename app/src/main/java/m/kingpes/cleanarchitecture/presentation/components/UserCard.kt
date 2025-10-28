@@ -1,4 +1,4 @@
-package m.kingpes.cleanarchitecture.ui
+package m.kingpes.cleanarchitecture.presentation.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row

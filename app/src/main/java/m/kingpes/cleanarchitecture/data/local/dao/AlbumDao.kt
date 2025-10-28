@@ -5,16 +5,16 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
-import m.kingpes.cleanarchitecture.data.local.entity.UserEntity
+import m.kingpes.cleanarchitecture.data.local.entity.AlbumEntity
 
 @Dao
-interface UserDao {
-    @Query("SELECT * FROM users")
-    fun getAllUsers(): Flow<List<UserEntity>>
+interface AlbumDao {
+    @Query("SELECT * FROM albums")
+    fun getAllAlbums(): Flow<List<AlbumEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUsers(users: List<UserEntity>)
+    suspend fun insertAlbums(albums: List<AlbumEntity>)
 
-    @Query("DELETE FROM users")
+    @Query("DELETE FROM albums")
     suspend fun clearAll()
 }

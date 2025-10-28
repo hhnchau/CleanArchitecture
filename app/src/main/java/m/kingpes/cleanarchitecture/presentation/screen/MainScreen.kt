@@ -1,4 +1,4 @@
-package m.kingpes.cleanarchitecture.ui
+package m.kingpes.cleanarchitecture.presentation.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +17,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import m.kingpes.cleanarchitecture.presentation.components.UserCard
+import m.kingpes.cleanarchitecture.presentation.viewmodel.MainViewModel
 
 @Composable
 fun MainScreen(viewModel: MainViewModel) {
@@ -56,7 +58,7 @@ fun MainScreen(viewModel: MainViewModel) {
                 /*users.forEach {
                     Text(text = "${it.name} (${it.email})")
                 }*/
-                items(users){user->UserCard(user)}
+                items(users){user-> UserCard(user) }
             }
         }
     }

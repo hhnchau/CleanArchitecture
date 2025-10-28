@@ -1,15 +1,12 @@
-package m.kingpes.cleanarchitecture.ui
+package m.kingpes.cleanarchitecture.presentation.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import m.kingpes.cleanarchitecture.data.UserRepository
-import m.kingpes.cleanarchitecture.data.local.entity.UserEntity
+import m.kingpes.cleanarchitecture.data.repository.UserRepository
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,7 +16,7 @@ class MainViewModel @Inject constructor(
     val users =
         repo.getLocalUsers().stateIn(
         scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5000),
+        started = SharingStarted.Companion.WhileSubscribed(5000),
         initialValue = emptyList()
     )
 
