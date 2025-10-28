@@ -68,13 +68,26 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     // Testing dependencies
+    //Unit test JVM
     testImplementation(libs.junit)
+    testImplementation("androidx.test:core:1.5.0")
+    testImplementation("io.mockk:mockk:1.13.9")
+    testImplementation("com.google.truth:truth:1.4.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+
+    //Instrumented test Device / Emulator
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Compose test
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    //Room test support
+    androidTestImplementation("androidx.room:room-testing:2.6.1")
+
 
     // Additional libraries
     implementation(libs.androidx.constraintlayout.compose)
